@@ -1,0 +1,1 @@
+heroku config:set -a [APP_NAME] GCS_CREDENTIALS_JSON_STR="$(< path/to/creds.json)" GOOGLE_APPLICATION_CREDENTIALS=google-credentials.json

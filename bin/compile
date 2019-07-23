@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+
+cd $BUILD_DIR
+
+if [ -f $ENV_DIR/GCS_CREDENTIALS_JSON_STR ]
+then
+
+cat $ENV_DIR/GCS_CREDENTIALS_JSON_STR >> $BUILD_DIR/google-credentials.json
+echo "GCS_CREDENTIALS_JSON_STR dumped!"
+
+else
+
+echo "GCS_CREDENTIALS_JSON_STR value NOT set!"
+
+fi
